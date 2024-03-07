@@ -1,22 +1,17 @@
+#include <stdio.h>
 // racas escolhidas: humano,elfo,
 // classes escolhidas: barbaro,guerreiro,mago,clerigo,patrulheiro
-
-#include <stdio.h>
 // aqui sera posto tudo q autera o personagem e sua ficha como dano escudo vida e etc...
 
-void main()
+void descricaoClasse()
 {
-    int opcao_raca, opcao_classe, descricao_raca, descricao_classe;
-    printf("para começar nossa historia precisamos montar um personagem para vc, vamos la:\n\n");
 
-
-
-
+    int descricao_raca;
 
     // menu de informacao... racas, separar em funcao.
     do
     {
-        printf("Temos estas racas: \n1-Humano \n2-Elfo \n3- \n0-Escolher \nPara abrir a descricao de cada classe digite o numero correspondente\n\nOpcao:");
+        printf("Temos estas racas: \n1-Humano \n2-Elfo \n3-Meio-Orc \n0-Sair para escolher a classe \nPara abrir a descricao de cada classe digite o numero correspondente\n\nOpcao: ");
         scanf("%d", &descricao_raca);
         switch (descricao_raca)
         {
@@ -40,29 +35,37 @@ void main()
             break;
         }
     } while (descricao_raca != 0);
+}
 
+int escolherRaca()
+{
     // menu basico de escolha de raças e classes separar  em funcao
+    int opcao_raca;
+
     do
     {
+        printf("Qual raça vc escolhe?");
+        scanf("%d", &opcao_raca);
         switch (opcao_raca)
         {
-            printf("Qual raça vc escolhe?");
+
         case 1:
-            printf("vc é um humano");
-            //aqui é implementada os modificadores da raça escolhida  
+            printf("vc é um humano\n");
+            // aqui é implementada os modificadores da raça escolhida
             break;
 
         case 2:
-            printf("vc é um elfo");
-            //aqui é implementada os modificadores da raça escolhida
+            printf("vc é um elfo\n");
+            // aqui é implementada os modificadores da raça escolhida
             break;
         case 3:
-            printf("vc é um meio-orc");
-            //aqui é implementada os modificadores da raça escolhidas
+            printf("vc é um meio-orc\n");
+            // aqui é implementada os modificadores da raça escolhidas
             break;
         default:
-            break;
+        printf("selecione uma rassa existente !\n");
+        opcao_raca=0;
+            //break;
         }
-
-    } while (descricao_classe != 0);
+    } while (opcao_raca ==0);
 }
